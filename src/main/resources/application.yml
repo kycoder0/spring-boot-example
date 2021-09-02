@@ -5,11 +5,12 @@ spring:
     url: jdbc:postgresql://localhost:5432/spring
     username: user
     password: password
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    show-sql: true
-#    database: postgresql
-#    database-platform: org.hibernate.dialect.PostgreSQLDialect
-#    open-in-view: fasle
-#    generate-ddl: true
+resilience4j.ratelimiter:
+  instances:
+    getPeople:
+      # how many requests are allowed within one period?
+      limitForPeriod: 5
+      # how long before the period resets?
+      limitRefreshPeriod: 10s
+      # how long does the thread wait for permission?
+      timeoutDuration: 1000ms
