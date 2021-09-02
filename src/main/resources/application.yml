@@ -14,3 +14,9 @@ resilience4j.ratelimiter:
       limitRefreshPeriod: 10s
       # how long does the thread wait for permission?
       timeoutDuration: 1000ms
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: "*"
