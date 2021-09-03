@@ -21,3 +21,9 @@ cascading failures and to extract useful metrics from your Spring Boot API.
 
     ```./start.sh```
 5. Run the Spring Boot app in IntelliJ
+
+### Viewing the API and metrics
+* To access the api you can use a command like CURL, a tool like Insomnia REST (or Postman), or simply type in the request in your browser
+
+   ```curl localhost:8080/api/v1/person```
+* To view the metrics, access Prometheus in your browser at http://localhost:9090
