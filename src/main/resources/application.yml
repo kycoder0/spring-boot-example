@@ -5,6 +5,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/spring
     username: user
     password: password
+
 resilience4j.ratelimiter:
   instances:
     getPeople:
@@ -14,6 +15,14 @@ resilience4j.ratelimiter:
       limitRefreshPeriod: 10s
       # how long does the thread wait for permission?
       timeoutDuration: 1000ms
+resilience4j.bulkhead:
+  instances:
+    # these values are just for testing
+    # should be changed for an actual production setup
+    getPeople:
+      maxWaitDuration: 100ms
+      maxConcurrentCalls: 1
+
 management:
   endpoints:
     enabled-by-default: true
