@@ -14,6 +14,7 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 git branch: 'main', url: 'https://github.com/trev-dev0/spring-boot-example.git'
+                sh '/usr/local/bin/docker-compose rm -f -s'
                 sh '/usr/local/bin/docker-compose down -v'
                 sh '/usr/local/bin/docker-compose up -d'
                 // Run Maven on a Unix agent.
