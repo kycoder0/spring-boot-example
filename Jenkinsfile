@@ -30,7 +30,6 @@ pipeline {
 
                 success {
                     sh "echo success"
-                    
                 }
                 always {
                     sh '/usr/local/bin/docker-compose rm -f -s'
