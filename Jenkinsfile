@@ -9,7 +9,11 @@ pipeline {
     }
 
     stages {
-
+        stage('Verify Branch') {
+            steps {
+                echo $GIT_BRANCH
+            }
+        }
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
